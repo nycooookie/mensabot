@@ -11,8 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ImportController@index');
 
-Route::get('/mensa', 'ImportController@index');
+Route::get('/mensa', 'ImportController@import');
+
+Route::get('bot', 'TelegramController@index');
+
+Route::post('/webhook', function () {
+    $update = Telegram::commandsHandler(true);
+
+    return 'ok';
+});
