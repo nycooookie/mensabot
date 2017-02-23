@@ -23,6 +23,8 @@ class TelegramController extends Controller
             'chat_id' => $chatId,
             'text' => 'Hello World'
         ]);
+
+       return $update = Telegram::commandsHandler(true);
     }
 
     public function register()
