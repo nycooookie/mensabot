@@ -20,5 +20,5 @@ Route::get('bot', 'TelegramController@index');
 Route::post('/webhook', function () {
     $update = Telegram::commandsHandler(true);
 
-    return 'ok';
+    return 'hi';
 });
