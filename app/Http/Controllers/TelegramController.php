@@ -10,8 +10,6 @@ class TelegramController extends Controller
 
     public function webhook(Request $request)
     {
-        $chatId = $request->input('message.chat.id');
-
         return $update = Telegram::commandsHandler(true);
     }
 
