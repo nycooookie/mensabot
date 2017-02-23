@@ -26,7 +26,7 @@ class MenuCommand extends Command
 
         $this->replyWithChatAction(['action' => Actions::TYPING]);
 
-        $menus = Menu::all();
+        $menus = Menu::all()->take(3);
 
 
         foreach ($menus as $menu) {
