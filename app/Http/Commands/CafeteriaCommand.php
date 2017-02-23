@@ -2,21 +2,22 @@
 
 namespace App\Http\Commands;
 
+use App\Cafeteria;
 use App\Menu;
 use Telegram\Bot\Actions;
 use Telegram\Bot\Commands\Command;
 
-class MenuCommand extends Command
+class CafeteriaCommand extends Command
 {
     /**
      * @var string Command Name
      */
-    protected $name = "menu";
+    protected $name = "cafeteria";
 
     /**
      * @var string Command Description
      */
-    protected $description = "Get your daily menus!";
+    protected $description = "Get a list of all cafeterias!";
 
     /**
      * @inheritdoc
@@ -26,10 +27,9 @@ class MenuCommand extends Command
 
         $this->replyWithChatAction(['action' => Actions::TYPING]);
 
-        $menus = Menu::all()->take(5);
+        $cafeterias = Cafeteria::all();
 
-        $this->replyWithMessage(['text' => $menus->implode('description', "\n\n")]);
-
+        $this->replyWithMessage(['text' => $cafeterias->implode('name', PHP_EOL)]);
 
         return;
     }

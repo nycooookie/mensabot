@@ -43,7 +43,7 @@ class ImportController extends Controller
                     'id' => $meal->id,
                     'name' => $meal->label,
                     'type' => $meal->type,
-                    'description' => implode($meal->description, ' '),
+                    'description' => implode(PHP_EOL, $meal->description),
                     'date' => $date
                 ]);
 

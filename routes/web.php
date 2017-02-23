@@ -13,8 +13,9 @@
 
 Route::get('/', 'ImportController@index');
 
-Route::get('/mensa', 'ImportController@import');
+Route::get('/import', 'ImportController@import');
 
-Route::get('webhook/register', 'TelegramController@register');
-
-Route::post('/webhook', 'TelegramController@webhook');
+Route::group(['prefix' => 'webhook'], function () {
+    Route::post('/', 'TelegramController@webhook');
+    Route::get('/register', 'TelegramController@register');
+});
