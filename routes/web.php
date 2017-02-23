@@ -15,9 +15,9 @@ Route::get('/', 'ImportController@index');
 
 Route::get('/mensa', 'ImportController@import');
 
-Route::get('bot', 'TelegramController@index');
+Route::get('/bot', 'TelegramController@index');
 
-Route::post('/<token>/webhook', function () {
+Route::post('/webhook', function () {
     $update = Telegram::commandsHandler(true);
 
     // Commands handler method returns an Update object.
