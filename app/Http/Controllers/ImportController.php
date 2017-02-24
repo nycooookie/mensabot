@@ -44,6 +44,7 @@ class ImportController extends Controller
                     'name' => $meal->label,
                     'type' => $meal->type,
                     'description' => implode(PHP_EOL, $meal->description),
+                    'cafeteria_id' => $cafeteria->id,
                     'date' => $date
                 ]);
 

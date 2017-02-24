@@ -2,9 +2,11 @@
 
 namespace App\Http\Commands;
 
+use App\Cafeteria;
 use App\Menu;
 use Telegram\Bot\Actions;
 use Telegram\Bot\Commands\Command;
+use Telegram\Bot\Laravel\Facades\Telegram;
 
 class MenuCommand extends Command
 {
@@ -23,13 +25,24 @@ class MenuCommand extends Command
      */
     public function handle($arguments)
     {
-
-        $this->replyWithChatAction(['action' => Actions::TYPING]);
-
+        /*$this->replyWithChatAction(['action' => Actions::TYPING]);
         $menus = Menu::all()->take(5);
+        $this->replyWithMessage(['text' => $menus->implode('description', "\n\n")]);*/
 
-        $this->replyWithMessage(['text' => $menus->implode('description', "\n\n")]);
+        $keyboard[] = [];
+        foreach (Cafeteria::all() as $cafeteria)
+            array_push($keyboard, [$cafeteria->name]);
 
+        $reply_markup = Telegram::replyKeyboardMarkup([
+            'keyboard' => $keyboard,
+            'resize_keyboard' => true,
+            'one_time_keyboard' => true,
+        ]);
+
+        $response = $this->replyWithMessage([
+            'text' => 'Please select a cafeteria:',
+            'reply_markup' => $reply_markup
+        ]);
 
         return;
     }

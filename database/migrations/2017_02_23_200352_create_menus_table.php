@@ -18,6 +18,8 @@ class CreateMenusTable extends Migration
             $table->text('name');
             $table->text('type')->nullable();
             $table->mediumText('description')->nullable();
+            $table->integer('cafeteria_id')->unsigned();
+            $table->foreign('cafeteria_id')->references('id')->on('cafeterias');
             $table->date('date');
             $table->timestamps();
         });

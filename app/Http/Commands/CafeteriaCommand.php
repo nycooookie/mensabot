@@ -25,11 +25,15 @@ class CafeteriaCommand extends Command
     public function handle($arguments)
     {
 
-        $this->replyWithChatAction(['action' => Actions::TYPING]);
+        $this->replyWithChatAction([
+            'action' => Actions::TYPING
+        ]);
 
         $cafeterias = Cafeteria::all();
 
-        $this->replyWithMessage(['text' => $cafeterias->implode('name', PHP_EOL)]);
+        $this->replyWithMessage([
+            'text' => $cafeterias->implode('name', PHP_EOL)
+        ]);
 
         return;
     }
