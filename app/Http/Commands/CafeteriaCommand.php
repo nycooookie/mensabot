@@ -24,7 +24,6 @@ class CafeteriaCommand extends Command
      */
     public function handle($arguments)
     {
-
         $this->replyWithChatAction([
             'action' => Actions::TYPING
         ]);

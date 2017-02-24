@@ -11,16 +11,12 @@ class TelegramController extends Controller
 
     public function webhook(Request $request)
     {
-        $text = $request->message['text'];
-        $cafeteria = Cafeteria::where('name', $text)->first();
-        if ($cafeteria) {
-
+        if ($cafeteria = Cafeteria::where('name', $request->message['text'])->first()) {
                 Telegram::sendMessage([
                     'chat_id' => $request->message['chat']['id'],
                     'text' => $cafeteria->menus->implode('description', "\n\n")
                 ]);
         }
-
         
         return Telegram::commandsHandler(true);
     }
