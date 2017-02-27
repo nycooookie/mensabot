@@ -49,7 +49,7 @@ class TelegramController extends Controller
         $url = secure_url('webhook');
         // $url = "https://requestb.in/12bkrla1";
         Telegram::setWebhook(['url' => $url]);
-        return $url;
+        return "Ok";
     }
 
 }
