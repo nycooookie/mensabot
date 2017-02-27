@@ -36,7 +36,7 @@ class ImportMenus extends Command
      *
      * @return mixed
      */
-    public function handle(Menus $menus)
+    public function handle(MenuBot $menus)
     {
         $menus->import();
     }

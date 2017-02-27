@@ -60,6 +60,7 @@ return [
         App\Http\Commands\StartCommand::class,
         App\Http\Commands\MenuCommand::class,
         App\Http\Commands\CafeteriaCommand::class,
+        App\Http\Commands\FavoritesCommand::class,
         // App\Http\Commands\SettingsCommand::class
     ],
 ];

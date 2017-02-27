@@ -11,11 +11,11 @@
 |
 */
 
-Route::get('/', 'ImportController@index');
+Route::get('/', 'TelegramController@index');
 
 Route::get('/import', 'ImportController@import');
 
 Route::group(['prefix' => 'webhook'], function () {
-    Route::post('/', 'TelegramController@webhook');
     Route::get('/register', 'TelegramController@register');
+    Route::post('/', 'TelegramController@webhook');
 });
