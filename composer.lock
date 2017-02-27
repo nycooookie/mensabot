@@ -485,12 +485,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "b14e614e65eafb8d65f2ae6aadb8a7eee131e356"
+                "reference": "91e81aa3671856576f4099141d116a995a122a89"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/b14e614e65eafb8d65f2ae6aadb8a7eee131e356",
-                "reference": "b14e614e65eafb8d65f2ae6aadb8a7eee131e356",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/91e81aa3671856576f4099141d116a995a122a89",
+                "reference": "91e81aa3671856576f4099141d116a995a122a89",
                 "shasum": ""
             },
             "require": {
@@ -606,7 +606,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-02-27T20:32:06+00:00"
+            "time": "2017-02-27T20:54:32+00:00"
         },
         {
             "name": "laravel/tinker",

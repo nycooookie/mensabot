@@ -26,7 +26,7 @@ class TelegramController extends Controller
 
         $update = Telegram::commandsHandler(true);
 
-        if ($update->hasType('message')) {
+        //if ($update->hasType('message')) {
 
             $cafeteria = Cafeteria::where('name', $request->message['text'])
                 ->orderBy('date', 'desc')
@@ -38,7 +38,7 @@ class TelegramController extends Controller
                 ]);
             }
 
-        }
+        //}
 
         return;
     }
