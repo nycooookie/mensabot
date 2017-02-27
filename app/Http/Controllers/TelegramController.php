@@ -18,7 +18,6 @@ class TelegramController extends Controller
 
     public function webhook(Request $request)
     {
-
         User::updateOrCreate([
             'id' => $request->message['from']['id'],
             'name' => $request->message['from']['first_name'],
