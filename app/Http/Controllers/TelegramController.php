@@ -28,9 +28,8 @@ class TelegramController extends Controller
 
         //if ($update->hasType('message')) {
 
-            $cafeteria = Cafeteria::where('name', $request->message['text'])
-                ->orderBy('date', 'desc')
-                ->first();
+            $cafeteria = Cafeteria::where('name', $request->message['text'])->first();
+
             if ($cafeteria) {
                 Telegram::sendMessage([
                     'chat_id' => $request->message['chat']['id'],
