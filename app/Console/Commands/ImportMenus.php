@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Repositories\Menus;
+use App\Repositories\MenuBot;
 use Illuminate\Console\Command;
 
 class ImportMenus extends Command
