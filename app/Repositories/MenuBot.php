@@ -18,7 +18,7 @@ class MenuBot
 
     public function import()
     {
-        $date = Carbon::now()->toDateString();
+        $date = Carbon::today()->toDateString();
         $api = 'https://www.webservices.ethz.ch/gastro/v1/RVRI/Q1E1/meals/de/' . $date . '/lunch';
         $json = file_get_contents($api);
         $obj = json_decode($json);
@@ -36,7 +36,7 @@ class MenuBot
                     'type' => $meal->type,
                     'description' => implode(' ', $meal->description),
                     'cafeteria_id' => $cafeteria->id,
-                    'date' => $date
+                    'date' => Carbon::today()
                 ]);
             }
         }
