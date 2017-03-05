@@ -32,10 +32,8 @@ class TelegramController extends Controller
         $cafeteria = Cafeteria::where('name', $request->message['text'])->first();
 
         if ($cafeteria) {
-            $text = 'Menu vom ' . Carbon::today()->toFormattedDateString() . "\n\n";
+            $text = 'Menu vom ' . Carbon::today()->formatLocalized('%d.%m') . ":\n\n";
             $menus = $cafeteria->menus()->where('date', Carbon::today())->get();
-
-            dd($text . $menus->implode('description', "\n\n"));
 
             Telegram::sendMessage([
                 'chat_id' => $request->message['chat']['id'],
