@@ -22,7 +22,7 @@ class TelegramController extends Controller
         User::updateOrCreate([
             'id' => $request->message['from']['id'],
             'name' => $request->message['from']['first_name'],
-            'username' => $request->message['from']['username']
+            'username' => '...'
         ]);
 
         $update = Telegram::commandsHandler(true);
