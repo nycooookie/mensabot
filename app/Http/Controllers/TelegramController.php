@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Cafeteria;
 use App\User;
 use Carbon\Carbon;
-use Illuminate\Contracts\Logging\Log;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use Telegram\Bot\Laravel\Facades\Telegram;
 

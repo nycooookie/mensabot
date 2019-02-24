@@ -7,7 +7,7 @@ use App\Menu;
 use Telegram\Bot\Actions;
 use Telegram\Bot\Commands\Command;
 use Telegram\Bot\Laravel\Facades\Telegram;
-use Illuminate\Contracts\Logging\Log;
+use Illuminate\Support\Facades\Log;
 
 
 class MenuCommand extends Command
