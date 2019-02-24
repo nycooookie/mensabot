@@ -19,6 +19,8 @@ class TelegramController extends Controller
 
     public function webhook(Request $request)
     {
+        Log::info('received request');
+
         User::updateOrCreate([
             'id' => $request->message['from']['id'],
             'name' => $request->message['from']['first_name'],
@@ -26,7 +28,7 @@ class TelegramController extends Controller
         ]);
 
         $update = Telegram::commandsHandler(true);
-        
+
 
         //if ($update->hasType('message')) {
 

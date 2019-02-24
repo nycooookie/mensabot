@@ -7,6 +7,8 @@ use App\Menu;
 use Telegram\Bot\Actions;
 use Telegram\Bot\Commands\Command;
 use Telegram\Bot\Laravel\Facades\Telegram;
+use Illuminate\Contracts\Logging\Log;
+
 
 class MenuCommand extends Command
 {
@@ -28,6 +30,8 @@ class MenuCommand extends Command
         /*$this->replyWithChatAction(['action' => Actions::TYPING]);
         $menus = Menu::all()->take(5);
         $this->replyWithMessage(['text' => $menus->implode('description', "\n\n")]);*/
+
+        Log::info('handles request');
 
         $keyboard[] = [];
         foreach (Cafeteria::all() as $cafeteria)
