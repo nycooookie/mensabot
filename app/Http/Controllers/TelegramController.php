@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Cafeteria;
 use App\User;
+use App\Menu;
+use App\Cafeteria;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
@@ -14,13 +15,12 @@ class TelegramController extends Controller
 
     public function index()
     {
-        return view('pages.home');
+        $menus = Menu::orderBy('date', 'desc')->with('cafeteria')->paginate();
+        return view('pages.home', compact('menus'));
     }
 
     public function webhook(Request $request)
     {
-        Log::info('received request');
-
         User::updateOrCreate([
             'id' => $request->message['from']['id'],
             'name' => $request->message['from']['first_name'],
