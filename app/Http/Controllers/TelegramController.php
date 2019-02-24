@@ -26,6 +26,7 @@ class TelegramController extends Controller
         ]);
 
         $update = Telegram::commandsHandler(true);
+        
 
         //if ($update->hasType('message')) {
 
