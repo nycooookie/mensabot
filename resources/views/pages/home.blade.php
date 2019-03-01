@@ -7,8 +7,8 @@
     <ul class="list-group">
     @foreach ($menus as $menu)
     	<li class="list-group-item">
-    		{{ $menu->name }} <span class="badge">{{ $menu->date->diffForHumans() }}</span>
-    		<br> <small>{{ $menu->cafeteria->name }}</small>
+    		{{ $menu->name }} <small>{{ $menu->cafeteria->name }}</small> <span class="badge">{{ $menu->date->diffForHumans() }}</span>
+    		<br> {{ $menu->description }}
     	</li>
     @endforeach
     </ul>
