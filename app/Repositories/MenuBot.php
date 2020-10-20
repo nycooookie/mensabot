@@ -33,7 +33,7 @@ class MenuBot
                 Menu::updateOrCreate([
                     'id' => $meal->id,
                     'name' => $meal->label,
-                    'type' => $meal->type,
+//                    'type' => $meal->type,
                     'description' => implode(' ', $meal->description),
                     'cafeteria_id' => $cafeteria->id,
                     'date' => Carbon::today()
